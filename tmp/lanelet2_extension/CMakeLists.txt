@@ -41,6 +41,7 @@ ament_auto_add_library(lanelet2_extension_lib SHARED
   lib/road_marking.cpp
   lib/speed_bump.cpp
   lib/utilities.cpp
+  lib/v2x_gate.cpp
   lib/virtual_traffic_light.cpp
   lib/visualization.cpp
   lib/route_checker.cpp
