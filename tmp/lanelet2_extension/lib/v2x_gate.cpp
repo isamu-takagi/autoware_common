@@ -55,9 +55,14 @@ V2xGate::V2xGate(const RegulatoryElementDataPtr & data) : RegulatoryElement(data
   */
 }
 
-ConstLineString3d V2xGate::getStartLines() const
+std::vector<ConstLineString3d> V2xGate::getAcquireLines() const
 {
-  return getParameters<ConstLineString3d>("start_line").front();
+  return getParameters<ConstLineString3d>("acquire_line");
+}
+
+std::vector<ConstLineString3d> V2xGate::getReleaseLines() const
+{
+  return getParameters<ConstLineString3d>("release_line");
 }
 
 /*

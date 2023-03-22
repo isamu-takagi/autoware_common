@@ -40,7 +40,8 @@ public:
     return Ptr{new V2xGate(id, attributes, road_marking)};
   }
 
-  ConstLineString3d getStartLines() const;
+  std::vector<ConstLineString3d> getAcquireLines() const;
+  std::vector<ConstLineString3d> getReleaseLines() const;
 
   /**
    * @brief get the relevant road marking
