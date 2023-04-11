@@ -21,6 +21,7 @@
 #include <lanelet2_core/primitives/LineString.h>
 
 #include <memory>
+#include <string>
 #include <vector>
 
 namespace lanelet::autoware
@@ -40,6 +41,7 @@ public:
     return Ptr{new V2xGate(id, attributes, road_marking)};
   }
 
+  std::string getCategory() const;
   std::vector<ConstLineString3d> getAcquireLines() const;
   std::vector<ConstLineString3d> getReleaseLines() const;
 
