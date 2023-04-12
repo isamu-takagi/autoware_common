@@ -34,40 +34,14 @@ public:
   using Ptr = std::shared_ptr<V2xGate>;
   static constexpr char RuleName[] = "v2x_gate";
 
-  //! Directly construct a stop line from its required rule parameters.
-  //! Might modify the input data in order to get correct tags.
-  static Ptr make(Id id, const AttributeMap & attributes, const LineString3d & road_marking)
-  {
-    return Ptr{new V2xGate(id, attributes, road_marking)};
-  }
-
   std::string getCategory() const;
   std::vector<ConstLineString3d> getAcquireLines() const;
   std::vector<ConstLineString3d> getReleaseLines() const;
-
-  /**
-   * @brief get the relevant road marking
-   * @return road marking
-   */
-  // [[nodiscard]] ConstLineString3d V2xGate() const;
-  // [[nodiscard]] LineString3d V2xGate();
-
-  /**
-   * @brief add a new road marking
-   * @param primitive road marking to add
-   */
-  // void setV2xGate(const LineString3d & road_marking);
-
-  /**
-   * @brief remove a road marking
-   */
-  // void removeV2xGate();
 
 private:
   // the following lines are required so that lanelet2 can create this object
   // when loading a map with this regulatory element
   friend class lanelet::RegisterRegulatoryElement<V2xGate>;
-  V2xGate(Id id, const AttributeMap & attributes, const LineString3d & temp);
   explicit V2xGate(const lanelet::RegulatoryElementDataPtr & data);
 };
 
